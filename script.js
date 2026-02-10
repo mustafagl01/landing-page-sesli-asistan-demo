@@ -128,21 +128,18 @@ function unlockPhone() {
     }
 }
 
-// Update Clock
+// Update Clock (Fixed for Demo Scenario: 03:14 AM)
 function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const timeString = `${hours}:${minutes}`;
+    const timeString = "03:14";
 
     const clockTime = document.getElementById('clockTime');
     const clockDate = document.getElementById('clockDate');
 
     if (clockTime) clockTime.textContent = timeString;
 
-    // Simple date formatting
     const options = { weekday: 'long', month: 'long', day: 'numeric' };
-    if (clockDate) clockDate.textContent = now.toLocaleDateString('tr-TR', options);
+    const demoDate = new Date(); // Keeping current date but can be hardcoded too
+    if (clockDate) clockDate.textContent = demoDate.toLocaleDateString('tr-TR', options);
 }
 
 // Flashlight Logic
