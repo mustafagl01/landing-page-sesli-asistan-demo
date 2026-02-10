@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MGL Asistan | Klinikler için AI Çağrı Asistanı</title>
-    <meta name="description" content="Klinik sahipleri için dönüşüm odaklı AI asistan. 10 saniye içinde arama, 7/24 otomasyon, çok dilli konuşma ve takvime otomatik randevu.">
+    <meta name="description"
+        content="Klinik sahipleri için dönüşüm odaklı AI asistan. 10 saniye içinde arama, 7/24 otomasyon, çok dilli konuşma ve takvime otomatik randevu.">
+
+    <!-- Particles.js for AI Network Background -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2379329765780243');
-    fbq('track', 'PageView');
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2379329765780243');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2379329765780243&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=2379329765780243&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header class="header" id="header">
+    <div id="particles-js"></div>
+    <div id="spotlight"></div>
+    <div class="bg-glow"></div>
+    <header class="header" id="header" data-aos="fade-down" data-aos-duration="1000">
         <div class="container header-row">
             <div class="logo" aria-label="MGL Asistan">MGL <span>Asistan</span></div>
             <a href="#demo-form" class="btn btn-secondary">Demo Talep</a>
@@ -37,39 +51,43 @@
     <main>
         <section class="hero" id="hero">
             <div class="container">
-                <div class="hero-copy">
+                <div class="hero-copy" data-aos="fade-right" data-aos-delay="200">
                     <p class="eyebrow">Klinikler için dönüşüm odaklı AI çağrı asistanı</p>
-                    <h1>Kliniğinize gelen sıcak başvuruları kaçırmayın.</h1>
-                    <p class="hero-description">MGL Asistan, başvuruyu 10 saniye içinde arar, doğru dilde konuşur ve uygun slota randevuyu otomatik işler.</p>
+                    <h1>Kliniğinize gelen <span class="gradient-text">sıcak başvuruları</span> kaçırmayın.</h1>
+                    <p class="hero-description">MGL Asistan, başvuruyu 10 saniye içinde arar, doğru dilde konuşur ve
+                        uygun slota randevuyu otomatik işler.</p>
                     <div class="hero-actions">
-                        <a href="#demo-form" class="btn btn-primary" id="start-live-test">Canlı Testi Başlat</a>
+                        <a href="#demo-form" class="btn btn-primary glow-effect" id="start-live-test">Canlı Testi
+                            Başlat</a>
                         <a href="#ozellikler" class="btn btn-ghost">Nasıl Çalışır?</a>
                     </div>
                 </div>
 
-                <picture class="hero-media">
-                    <source media="(max-width: 767px)" srcset="landing%20tel.png?v=3">
-                    <img src="landing%20pc.png?v=3" alt="MGL AI Klinik Asistanı" loading="eager" decoding="async">
-                </picture>
+                <div class="hero-media-wrapper" data-aos="fade-left" data-aos-delay="400">
+                    <picture class="hero-media floating">
+                        <source media="(max-width: 767px)" srcset="landing%20tel.png?v=3">
+                        <img src="landing%20pc.png?v=3" alt="MGL AI Klinik Asistanı" loading="eager" decoding="async">
+                    </picture>
+                </div>
             </div>
         </section>
 
         <section class="qualification" aria-label="Uygunluk">
             <div class="container qualification-grid">
-                <article class="qualification-card">
+                <article class="qualification-card" data-aos="fade-up" data-aos-delay="100">
                     <h2>Bu sistem kimler için?</h2>
                     <ul>
-                        <li>Özel klinik sahipleri</li>
-                        <li>Sağlık turizmi yapan klinikler</li>
-                        <li>Günlük 5+ hasta başvurusu alan işletmeler</li>
+                        <li><span class="icon">✅</span> Özel klinik sahipleri</li>
+                        <li><span class="icon">✅</span> Sağlık turizmi yapan klinikler</li>
+                        <li><span class="icon">✅</span> Günlük 5+ hasta başvurusu alan işletmeler</li>
                     </ul>
                 </article>
 
-                <article class="qualification-card muted">
+                <article class="qualification-card muted" data-aos="fade-up" data-aos-delay="200">
                     <h2>Kimler için değil?</h2>
                     <ul>
-                        <li>Düşük başvuru hacmi olan yerler</li>
-                        <li>Klinik sahibi/yönetici olmayanlar</li>
+                        <li><span class="icon">❌</span> Düşük başvuru hacmi olan yerler</li>
+                        <li><span class="icon">❌</span> Klinik sahibi/yönetici olmayanlar</li>
                     </ul>
                 </article>
             </div>
@@ -77,8 +95,9 @@
 
         <section class="features" id="ozellikler">
             <div class="container">
-                <h2>Nasıl Çalışır?</h2>
-                <p class="section-description">Formdan gelen başvuru, çok kısa sürede aranır ve hasta akışı takvime kadar otomatik yönetilir.</p>
+                <h2 data-aos="fade-up">Nasıl Çalışır?</h2>
+                <p class="section-description" data-aos="fade-up" data-aos-delay="100">Formdan gelen başvuru, çok kısa
+                    sürede aranır ve hasta akışı takvime kadar otomatik yönetilir.</p>
 
                 <div class="features-grid">
                     <article class="feature-card">
@@ -106,54 +125,122 @@
         </section>
 
         <section class="form-section" id="demo-form">
-            <div class="container form-container">
-                <h2>Canlı Test / Demo Planla</h2>
-                <p class="section-description">Numaranızı bırakın, AI asistanımız sizi arayıp canlı şekilde istediğiniz dilde konuşsun. İsterseniz “bir cümleyi farklı dile çevir” testi de yapabilirsiniz.</p>
+            <div class="container form-container" data-aos="flip-up" data-aos-duration="1000">
+                <!-- Phone Notch -->
+                <div class="phone-notch">
+                    <div class="phone-speaker"></div>
+                </div>
 
-                <div class="alert alert-warning" id="positionWarning" role="status" aria-live="polite" hidden></div>
-                <div class="alert alert-success" id="successMessage" role="status" aria-live="polite" hidden></div>
+                <!-- Lock Screen Overlay -->
+                <div class="lock-screen" id="lockScreen">
+                    <div class="lock-clock">
+                        <div class="clock-time" id="clockTime">12:30</div>
+                        <div class="clock-date" id="clockDate">Pazartesi, 10 Şubat</div>
 
-                <form id="demoForm" novalidate>
-                    <div class="field-grid">
-                        <label class="field">
-                            <span>Ad Soyad *</span>
-                            <input type="text" id="name" name="name" required autocomplete="name">
-                        </label>
-                        <label class="field">
-                            <span>Telefon *</span>
-                            <input type="tel" id="phone" name="phone" required autocomplete="tel">
-                        </label>
-                        <label class="field">
-                            <span>E-posta *</span>
-                            <input type="email" id="email" name="email" required autocomplete="email">
-                        </label>
-                        <label class="field">
-                            <span>Klinik Adı veya Website/Instagram *</span>
-                            <input type="text" id="clinic" name="clinic" required>
-                        </label>
-                        <label class="field">
-                            <span>Pozisyon *</span>
-                            <select id="position" name="position" required>
-                                <option value="">Seçiniz</option>
-                                <option value="Klinik Sahibi">Klinik Sahibi</option>
-                                <option value="Yönetici">Yönetici</option>
-                                <option value="Pazarlama">Pazarlama</option>
-                                <option value="Diğer">Diğer</option>
-                            </select>
-                        </label>
-                        <label class="field">
-                            <span>Aylık Başvuru Sayısı</span>
-                            <select id="monthlyLeads" name="monthlyLeads">
-                                <option value="">Seçiniz</option>
-                                <option value="0–20">0–20</option>
-                                <option value="21–50">21–50</option>
-                                <option value="50+">50+</option>
-                            </select>
-                        </label>
+                        <div class="notification-card">
+                            <div class="notif-header">
+                                <span style="display:flex; align-items:center; gap:8px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.38l-9 6.75-9-6.75V21H1.5C.65 21 0 20.35 0 19.5v-15c0-.4.15-.75.45-1.05.3-.3.65-.45 1.05-.45H3l9 6.75 9-6.75h1.5c.4 0 .75.15 1.05.45.3.3.45.65.45 1.05z"
+                                            fill="#EA4335" />
+                                    </svg>
+                                    YENİ RANDEVU (OTO)
+                                </span>
+                                <span>AZ ÖNCE</span>
+                            </div>
+                            <div class="notif-content">
+                                🇬🇧 <strong>İngiltere'den Başvuru (01:14)</strong><br>
+                                Hasta arandı, ön görüşme yapıldı ve bugün saat <strong>11:00</strong>'e randevusu
+                                takviminize işlendi. ✅
+                            </div>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-submit">Canlı Testi Başlat</button>
-                </form>
+                    <div class="unlock-area">
+                        <div class="swipe-hint">KİLİDİ AÇMAK İÇİN DOKUN</div>
+                        <div
+                            style="display:flex; justify-content: space-around; width: 100%; align-items: center; margin-bottom: 10px;">
+                            <button class="phone-tool-btn" id="lockFlashlight"
+                                onclick="toggleFlashlight(event)">🔦</button>
+                            <button class="unlock-btn" style="width: 50%;" onclick="unlockPhone()">Kilidi Aç 🔓</button>
+                            <button class="phone-tool-btn">📷</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overlay for calling animation -->
+                <div class="calling-overlay" id="callingOverlay">
+                    <div class="calling-avatar">🤖</div>
+                    <h3 style="margin-bottom: 10px;">MGL Asistan</h3>
+                    <p style="color:var(--muted); margin-bottom: 40px;">Aranıyor...</p>
+                    <div style="display:flex; gap:20px;">
+                        <button type="button" class="btn"
+                            style="background: #ff3b30; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px;"
+                            onclick="closeOverlay()">❌</button>
+                    </div>
+                </div>
+
+                <div class="form-inner">
+                    <div
+                        style="display: flex; justify-content: flex-end; margin-bottom: -34px; position: relative; z-index: 10; padding-right: 10px;">
+                        <button class="phone-tool-btn small" id="homeFlashlight"
+                            onclick="toggleFlashlight(event)">🔦</button>
+                    </div>
+                    <h2>Canlı Test / Demo Planla</h2>
+                    <p class="section-description">Bilgilerinizi girin ve arama butonuna basın. AI asistanımız 10 saniye
+                        içinde sizi arayacaktır.</p>
+
+                    <div class="alert alert-warning" id="positionWarning" role="status" aria-live="polite" hidden></div>
+                    <div class="alert alert-success" id="successMessage" role="status" aria-live="polite" hidden></div>
+
+                    <form id="demoForm" novalidate style="display: flex; flex-direction: column; flex: 1;">
+                        <div class="field-grid">
+                            <label class="field">
+                                <span>Ad Soyad *</span>
+                                <input type="text" id="name" name="name" required autocomplete="name"
+                                    placeholder="Adınız">
+                            </label>
+                            <label class="field">
+                                <span>Telefon *</span>
+                                <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                                    placeholder="+90 555 555 55 55">
+                            </label>
+                            <label class="field">
+                                <span>E-posta *</span>
+                                <input type="email" id="email" name="email" required autocomplete="email"
+                                    placeholder="ornek@email.com">
+                            </label>
+                            <label class="field">
+                                <span>Klinik Adı / Web</span>
+                                <input type="text" id="clinic" name="clinic" required placeholder="Klinik Adı">
+                            </label>
+                            <label class="field">
+                                <span>Pozisyon *</span>
+                                <select id="position" name="position" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="Klinik Sahibi">Klinik Sahibi</option>
+                                    <option value="Yönetici">Yönetici</option>
+                                    <option value="Pazarlama">Pazarlama</option>
+                                    <option value="Diğer">Diğer</option>
+                                </select>
+                            </label>
+                            <label class="field">
+                                <span>Aylık Başvuru</span>
+                                <select id="monthlyLeads" name="monthlyLeads">
+                                    <option value="">Seçiniz</option>
+                                    <option value="0–20">0–20</option>
+                                    <option value="21–50">21–50</option>
+                                    <option value="50+">50+</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit glow-effect"
+                            aria-label="Aramayı Başlat"></button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -164,8 +251,9 @@
         </div>
     </footer>
 
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-
-    <!-- Güncellenen dosyalar: index.html, style.css, script.js | Eklenen ana bölümler: responsive hero (<picture>), eleme bloğu, 4 ikonlu özellikler bölümü, lead kalitesi odaklı demo formu, Meta Pixel + event bağları. -->
 </body>
+
 </html>
