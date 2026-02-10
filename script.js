@@ -212,8 +212,7 @@ if (demoForm) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data),
-                mode: 'no-cors'
+                body: JSON.stringify(data)
             });
         } catch (error) {
             console.error('Webhook gönderimi başarısız oldu:', error);
