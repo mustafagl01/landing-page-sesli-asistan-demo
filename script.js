@@ -70,7 +70,8 @@ if (demoForm) {
         };
 
         try {
-            await triggerLiveTestWebhook(payload);
+await triggerLiveTestWebhook(payload);
+
         } catch (error) {
             console.error('Webhook gönderimi başarısız oldu:', error);
         }
