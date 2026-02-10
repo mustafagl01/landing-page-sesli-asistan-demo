@@ -16,6 +16,28 @@ if (startLiveTestButton) {
     });
 }
 
+async function triggerLiveTestWebhook(payload) {
+    const body = JSON.stringify(payload);
+
+    if (navigator.sendBeacon) {
+        const beaconBlob = new Blob([body], { type: 'text/plain;charset=UTF-8' });
+        const isSent = navigator.sendBeacon(liveTestWebhookUrl, beaconBlob);
+        if (isSent) {
+            return;
+        }
+    }
+
+    await fetch(liveTestWebhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/plain;charset=UTF-8'
+        },
+        body,
+        mode: 'no-cors',
+        keepalive: true
+    });
+}
+
 if (demoForm) {
     demoForm.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -48,14 +70,8 @@ if (demoForm) {
         };
 
         try {
-            await fetch(liveTestWebhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload),
-                mode: 'no-cors'
-            });
+await triggerLiveTestWebhook(payload);
+
         } catch (error) {
             console.error('Webhook gönderimi başarısız oldu:', error);
         }
