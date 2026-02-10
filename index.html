@@ -3,203 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGL Asistan - Hasta Kaybını %90 Azaltın</title>
-    <meta name="description" content="10 saniyede kendi dilinde yanıt alın. Hasta kaybını %90 azaltan çok dilli AI asistan.">
+    <title>MGL Asistan | Klinikler için AI Çağrı Asistanı</title>
+    <meta name="description" content="Klinik sahipleri için dönüşüm odaklı AI asistan. 10 saniye içinde arama, 7/24 otomasyon, çok dilli konuşma ve takvime otomatik randevu.">
 
-    <!-- Meta Pixel -->
+    <!-- Meta Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2379329765780243');
+    fbq('track', 'PageView');
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
-    </noscript>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2379329765780243&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <canvas id="particleCanvas"></canvas>
-    <div class="gradient-bg"></div>
-
-    <!-- Floating Orbs -->
-    <div class="floating-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-
-    <!-- Mouse Spotlight -->
-    <div class="spotlight" id="spotlight"></div>
-
-    <!-- Sticky Header -->
     <header class="header" id="header">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-mgl">MGL</span>
-                <span class="logo-asistan">Asistan</span>
-            </div>
-            <a href="#demo-form" class="btn-primary btn-small">Demo Talep</a>
+        <div class="container header-row">
+            <div class="logo" aria-label="MGL Asistan">MGL <span>Asistan</span></div>
+            <a href="#demo-form" class="btn btn-secondary">Demo Talep</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <!-- Instagram PNG -->
-                <div class="hero-image">
-                    <img src="assets/hasta-kaybini-90.png"
-                         alt="Hasta Kaybını %90 Azaltın"
-                         class="floating-image">
-                </div>
-
-                <!-- Headlines -->
-                <div class="hero-headlines">
-                    <h1 class="hero-title">
-                        Hasta Kaybını
-                        <span class="highlight">
-                            <span class="count-up" data-target="90">0</span>%
-                        </span> Azaltın
-                    </h1>
-                    <p class="hero-subtitle">
-                        <span class="count-up" data-target="10">0</span> saniyede
-                        kendi dilinde aranır
-                    </p>
-                </div>
-
-                <!-- Feature Cards -->
-                <div class="feature-cards">
-                    <div class="glass-card" data-animate>
-                        <div class="card-icon">✓</div>
-                        <div class="card-text">Çok Dilli</div>
-                    </div>
-                    <div class="glass-card" data-animate>
-                        <div class="card-icon">⚡</div>
-                        <div class="card-text">Anında</div>
-                    </div>
-                    <div class="glass-card" data-animate>
-                        <div class="card-icon">🧠</div>
-                        <div class="card-text">İnsan Kalite</div>
+    <main>
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-copy">
+                    <p class="eyebrow">Klinikler için dönüşüm odaklı AI çağrı asistanı</p>
+                    <h1>Kliniğinize gelen sıcak başvuruları kaçırmayın.</h1>
+                    <p class="hero-description">MGL Asistan, başvuruyu 10 saniye içinde arar, doğru dilde konuşur ve uygun slota randevuyu otomatik işler.</p>
+                    <div class="hero-actions">
+                        <a href="#demo-form" class="btn btn-primary" id="start-live-test">Canlı Testi Başlat</a>
+                        <a href="#ozellikler" class="btn btn-ghost">Nasıl Çalışır?</a>
                     </div>
                 </div>
 
-                <!-- CTA Button -->
-                <a href="#demo-form" class="btn-primary btn-large btn-glow">
-                    <span class="btn-icon">🔮</span>
-                    Demo Talep Et
-                    <span class="btn-arrow">→</span>
-                </a>
+                <picture class="hero-media">
+                    <source media="(max-width: 767px)" srcset="assets/landing%20tel.png?v=2">
+                    <img src="assets/landing%20pc.png?v=2" alt="MGL AI Klinik Asistanı" loading="eager" decoding="async">
+                </picture>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Grid Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card" data-animate>
-                    <div class="feature-icon">🧠</div>
-                    <h3>İnsan Kalitesinde</h3>
-                    <p>Yapay zeka teknolojimizle insan gibi doğal ve anlayışlı iletişim</p>
-                </div>
-                <div class="feature-card" data-animate>
-                    <div class="feature-icon">⚡</div>
-                    <h3>10 Saniye Yanıt</h3>
-                    <p>Hastalarınızı bekletmeyin. Saniyeler içinde dönüş sağlayın</p>
-                </div>
-                <div class="feature-card" data-animate>
-                    <div class="feature-icon">🌍</div>
-                    <h3>80+ Dil Desteği</h3>
-                    <p>Türkçe, İngilizce, Almanca, Fransızca, Arapça ve daha fazlası</p>
+        <section class="qualification" aria-label="Uygunluk">
+            <div class="container qualification-grid">
+                <article class="qualification-card">
+                    <h2>Bu sistem kimler için?</h2>
+                    <ul>
+                        <li>Özel klinik sahipleri</li>
+                        <li>Sağlık turizmi yapan klinikler</li>
+                        <li>Günlük 5+ hasta başvurusu alan işletmeler</li>
+                    </ul>
+                </article>
+
+                <article class="qualification-card muted">
+                    <h2>Kimler için değil?</h2>
+                    <ul>
+                        <li>Düşük başvuru hacmi olan yerler</li>
+                        <li>Klinik sahibi/yönetici olmayanlar</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="features" id="ozellikler">
+            <div class="container">
+                <h2>Nasıl Çalışır?</h2>
+                <p class="section-description">Formdan gelen başvuru, çok kısa sürede aranır ve hasta akışı takvime kadar otomatik yönetilir.</p>
+
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <img src="assets/ikon 1.png" alt="10 saniyede arama ikonu" loading="lazy" decoding="async">
+                        <h3>10 Saniyede Arama</h3>
+                        <p>Formu dolduran hasta sıcakken aranır.</p>
+                    </article>
+                    <article class="feature-card">
+                        <img src="assets/ikon 2.png" alt="7/24 otomatik arama ikonu" loading="lazy" decoding="async">
+                        <h3>7/24 Otomatik Arama</h3>
+                        <p>Mesai dışı ve saat farkında da çalışır.</p>
+                    </article>
+                    <article class="feature-card">
+                        <img src="assets/ikon3.png" alt="çok dilli konuşma ikonu" loading="lazy" decoding="async">
+                        <h3>Çok Dilli Konuşma</h3>
+                        <p>Hastanın kendi dilinde iletişim kurar.</p>
+                    </article>
+                    <article class="feature-card">
+                        <img src="assets/ikon 4.png" alt="takvime randevu ikonu" loading="lazy" decoding="async">
+                        <h3>Takvime Randevu</h3>
+                        <p>Uygun slot bulur, randevuyu oluşturur.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Form Section -->
-    <section class="form-section" id="demo-form">
-        <div class="container">
-            <div class="form-container" data-animate>
-                <h2 class="form-title">
-                    <span class="form-icon">💎</span>
-                    Hemen Demo Talep Edin
-                </h2>
+        <section class="form-section" id="demo-form">
+            <div class="container form-container">
+                <h2>Canlı Test / Demo Planla</h2>
+                <p class="section-description">Numaranızı bırakın, AI asistanımız sizi arayıp canlı şekilde istediğiniz dilde konuşsun. İsterseniz “bir cümleyi farklı dile çevir” testi de yapabilirsiniz.</p>
 
-                <form class="demo-form" id="demoForm">
-                    <div class="form-group">
-                        <label for="name">Ad Soyad</label>
-                        <input type="text" id="name" name="name" required
-                               placeholder="Adınız Soyadınız">
+                <div class="alert alert-warning" id="positionWarning" role="status" aria-live="polite" hidden></div>
+                <div class="alert alert-success" id="successMessage" role="status" aria-live="polite" hidden></div>
+
+                <form id="demoForm" novalidate>
+                    <div class="field-grid">
+                        <label class="field">
+                            <span>Ad Soyad *</span>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                        </label>
+                        <label class="field">
+                            <span>Telefon *</span>
+                            <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                        </label>
+                        <label class="field">
+                            <span>E-posta *</span>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </label>
+                        <label class="field">
+                            <span>Klinik Adı veya Website/Instagram *</span>
+                            <input type="text" id="clinic" name="clinic" required>
+                        </label>
+                        <label class="field">
+                            <span>Pozisyon *</span>
+                            <select id="position" name="position" required>
+                                <option value="">Seçiniz</option>
+                                <option value="Klinik Sahibi">Klinik Sahibi</option>
+                                <option value="Yönetici">Yönetici</option>
+                                <option value="Pazarlama">Pazarlama</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
+                        </label>
+                        <label class="field">
+                            <span>Aylık Başvuru Sayısı</span>
+                            <select id="monthlyLeads" name="monthlyLeads">
+                                <option value="">Seçiniz</option>
+                                <option value="0–20">0–20</option>
+                                <option value="21–50">21–50</option>
+                                <option value="50+">50+</option>
+                            </select>
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone" required
-                               placeholder="+90 5XX XXX XX XX veya +44 ..." autocomplete="tel">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">E-posta</label>
-                        <input type="email" id="email" name="email" required
-                               placeholder="ornek@email.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">İhtiyaç Alanı</label>
-                        <select id="service" name="service" required>
-                            <option value="">Seçiniz</option>
-                            <option value="hasta_kazanimi">Hasta Kazanımı</option>
-                            <option value="randevu">Randevu Yönetimi</option>
-                            <option value="musteri_hizmetleri">Müşteri Hizmetleri</option>
-                            <option value="cok_dilli">Çok Dilli Hizmet</option>
-                            <option value="diger">Diğer</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn-primary btn-large btn-glow btn-submit">
-                        <span class="btn-text">
-                            <span class="btn-icon">💎</span>
-                            Demo Talep Et
-                            <span class="btn-arrow">→</span>
-                        </span>
-                        <span class="btn-loading" style="display: none;">
-                            <span class="spinner"></span>
-                            Gönderiliyor...
-                        </span>
-                    </button>
+                    <button type="submit" class="btn btn-primary btn-submit">Canlı Testi Başlat</button>
                 </form>
-
-                <div class="form-security">
-                    <span>🔒 Verileriniz güvende 🔐</span>
-                </div>
-
-                <!-- Success Message -->
-                <div class="success-message" id="successMessage" style="display: none;">
-                    <div class="success-icon">✓</div>
-                    <h3>Talebiniz Alındı!</h3>
-                    <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 MGL Asistan. Tüm hakları saklıdır.</p>
+            <p>© 2024 MGL Asistan. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Güncellenen dosyalar: index.html, style.css, script.js | Eklenen ana bölümler: responsive hero (<picture>), eleme bloğu, 4 ikonlu özellikler bölümü, lead kalitesi odaklı demo formu, Meta Pixel + event bağları. -->
 </body>
 </html>
