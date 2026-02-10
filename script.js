@@ -2,6 +2,7 @@ const demoForm = document.getElementById('demoForm');
 const successMessage = document.getElementById('successMessage');
 const positionWarning = document.getElementById('positionWarning');
 const startLiveTestButton = document.getElementById('start-live-test');
+const liveTestWebhookUrl = 'https://nt3ys1ml.rpcd.host/webhook/6a7c3c99-b1fb-4483-bcba-18bdcdfad599';
 
 function safeFbq(...args) {
     if (typeof window.fbq === 'function') {
@@ -15,8 +16,30 @@ if (startLiveTestButton) {
     });
 }
 
+async function triggerLiveTestWebhook(payload) {
+    const body = JSON.stringify(payload);
+
+    if (navigator.sendBeacon) {
+        const beaconBlob = new Blob([body], { type: 'text/plain;charset=UTF-8' });
+        const isSent = navigator.sendBeacon(liveTestWebhookUrl, beaconBlob);
+        if (isSent) {
+            return;
+        }
+    }
+
+    await fetch(liveTestWebhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/plain;charset=UTF-8'
+        },
+        body,
+        mode: 'no-cors',
+        keepalive: true
+    });
+}
+
 if (demoForm) {
-    demoForm.addEventListener('submit', (event) => {
+    demoForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const isValid = demoForm.checkValidity();
@@ -37,7 +60,22 @@ if (demoForm) {
 
         safeFbq('track', 'Lead');
 
-        successMessage.textContent = 'Teşekkürler! Talebiniz başarıyla alındı. Ekibimiz en kısa sürede sizinle iletişime geçecek.';
+        const payload = {
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            clinic: document.getElementById('clinic').value,
+            position: positionValue,
+            monthlyLeads: document.getElementById('monthlyLeads').value
+        };
+
+        try {
+            await triggerLiveTestWebhook(payload);
+        } catch (error) {
+            console.error('Webhook gönderimi başarısız oldu:', error);
+        }
+
+        successMessage.textContent = 'Birkaç saniye içerisinde asistanımız sizi arayacaktır. Lütfen telefonunuzu kontrol ediniz.';
         successMessage.hidden = false;
 
         demoForm.reset();
