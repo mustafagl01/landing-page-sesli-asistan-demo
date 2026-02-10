@@ -47,13 +47,15 @@ if (demoForm) {
             monthlyLeads: document.getElementById('monthlyLeads').value
         };
 
+        const formBody = new URLSearchParams(payload).toString();
+
         try {
             await fetch(liveTestWebhookUrl, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
                 },
-                body: JSON.stringify(payload),
+                body: formBody,
                 mode: 'no-cors'
             });
         } catch (error) {
