@@ -38,7 +38,7 @@ if (demoForm) {
 
         safeFbq('track', 'Lead');
 
-        const payload = {
+        const data = {
             name: document.getElementById('name').value,
             phone: document.getElementById('phone').value,
             email: document.getElementById('email').value,
@@ -47,15 +47,13 @@ if (demoForm) {
             monthlyLeads: document.getElementById('monthlyLeads').value
         };
 
-        const formBody = new URLSearchParams(payload).toString();
-
         try {
             await fetch(liveTestWebhookUrl, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    'Content-Type': 'application/json'
                 },
-                body: formBody,
+                body: JSON.stringify(data),
                 mode: 'no-cors'
             });
         } catch (error) {
